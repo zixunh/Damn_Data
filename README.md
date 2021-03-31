@@ -9,4 +9,4 @@
 ### Examples
 * Data Set for Test
 ---
-**Email:** hzxarchitecture@zju.edu.cn
+**Email:** huangzxarchitecture@zju.edu.cn
