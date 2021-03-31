@@ -9,5 +9,4 @@
 ### Examples
 * Data Set for Test
 ---
-zixunhuang@outlook.com
-hazxarchitecture@zju.edu.cn
+email: hzxarchitecture@zju.edu.cn
