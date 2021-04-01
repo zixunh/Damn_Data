@@ -51,6 +51,7 @@ for i in range(4):
         c+=1
 plt.tight_layout()
 ```
-![example](https://user-images.githubusercontent.com/39406532/113274208-00604100-9310-11eb-9ae4-60f5a499fded.png)
+![example2](https://user-images.githubusercontent.com/39406532/113274997-dd825c80-9310-11eb-95b6-3abc37ae069d.png)
+
 ---
 **Email:** huangzxarchitecture@zju.edu.cn
