@@ -27,7 +27,7 @@ python setup.py install
 # How to Use it
 ### Example 1
 ```python
-import amaPoi
+from damndata.damn_geoSpider import geoautonavi as amaPoi
 import pandas as pd
 ```
 ```python
