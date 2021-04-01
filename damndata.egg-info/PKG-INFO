@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: damndata
+Version: 2021.4.1
+Summary: DaArMaNa Data Toolkit
+Home-page: https://github.com/HKeai/Damn_Data/
+Author: HuangZixun
+Author-email: zixunhuang@outlook.com
+License: UNKNOWN
+Description: The third-party package is currently divided into two parts, one part is used for obtaining urban big data such as points of interest, area of interest, social media data with geo-information, and the other part is used for extracting geographic distribution features to help designers visualize mass urban information.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text
