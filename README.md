@@ -4,9 +4,9 @@
 ---
 ### Damn GeoSpider
 ### Damn GeoBee
-  #### GeoKit
-  #### HotGrid
-  #### GeoHash
+* GeoKit
+* HotGrid
+* GeoHash
 ### Examples
 * Data Set for Test
 ---
