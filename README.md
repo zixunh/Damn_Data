@@ -14,6 +14,10 @@ python setup.py install
 - [x] HotGrid
 - [ ] GeoHash
 ### Examples
-- Data Set for Test
+```python
+import pandas as pd
+chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
+chengdu_poi.tail(1)
+```
 ---
 **Email:** huangzxarchitecture@zju.edu.cn
