@@ -14,7 +14,7 @@ python setup.py install
 - [x] HotGrid
 - [ ] GeoHash
 ### How to Use it
-* **example 1**
+* Example 1
 ```python
 import pandas as pd
 chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
@@ -34,7 +34,7 @@ sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
 ```
 ![example1](https://user-images.githubusercontent.com/39406532/113274748-9bf1b180-9310-11eb-83f9-f551c0aa93df.png)
 
-* **example 2**
+* Example 2
 ```python
 hg = HotGridGenerator(gridUnit = 1000,searchRadius = 1000)
 chengdu_typeMap = hg.gridCounting_byType(chengdu_poi,'wgslat','wgslng','typei')
