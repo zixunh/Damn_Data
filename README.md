@@ -49,6 +49,7 @@ sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
 ### Example 2
 ```python
 hg = HotGridGenerator(gridUnit = 1000,searchRadius = 1000)
+hg.grid_setting(chengdu_poi,'wgslat','wgslng')
 chengdu_typeMap = hg.gridCounting_byType(chengdu_poi,'wgslat','wgslng','typei')
 ```
 ```python
