@@ -157,6 +157,10 @@ import pandas as pd
 chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
 chengdu_poi.tail(1)
 ```
+
+
+
+
 <div>
 <table border="1" class="dataframe">
   <thead>
@@ -178,7 +182,9 @@ chengdu_poi.tail(1)
     </tr>
   </tbody>
 </table>
+<p>100 rows × 8 columns</p>
 </div>
+# 
 ```python
 from damndata.damn_geoBee.hotgrid import HotGridGenerator
 hg = HotGridGenerator(gridUnit = 200,searchRadius = 1000)
@@ -188,9 +194,10 @@ chengdu_poi_hotMap=hg.gridCounting_basic(chengdu_poi,'wgslat','wgslng')
 ```python
 import seaborn as sns
 from IPython.core.pylabtools import figsize
-figsize(21,12)
+figsize(21,16)
 sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
 ```
+
 ![example1](https://user-images.githubusercontent.com/39406532/113274748-9bf1b180-9310-11eb-83f9-f551c0aa93df.png)
 
 ### Example 4
