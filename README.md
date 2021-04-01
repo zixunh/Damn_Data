@@ -7,11 +7,11 @@ pip install "dist\damndata-2021.4.1.tar.gz"
 ```
 ---
 ### Damn GeoSpider
-- [ ] GeoAutoNavi
+- [x] GeoAutoNavi
 - [ ] GeoSocialMedia
 ### Damn GeoBee
-- [ ] GeoKit
-- [ ] HotGrid
+- [x] GeoKit
+- [x] HotGrid
 - [ ] GeoHash
 ### Examples
 - Data Set for Test
