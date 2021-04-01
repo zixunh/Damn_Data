@@ -7,15 +7,15 @@ python setup.py install
 ```
 ---
 ### Damn GeoSpider
-- [x] GeoAutoNavi
-- [ ] GeoSocialMedia
+##### GeoAutoNavi
+##### GeoSocialMedia
 ### Damn GeoBee
-- [x] GeoKit
+##### GeoKit
 - GCJ2WGS
 - haversine
 - getlngandlat
 - bordermatching
-- [x] HotGrid.HotGridGenerator
+##### HotGrid.HotGridGenerator
 - gridUnit
 - searchRadius
 - grid_setting
@@ -24,7 +24,7 @@ python setup.py install
 - gridCounting_byType
 - gridCounting_ex
 - hotarray
-- [ ] GeoHash
+##### GeoHash
 ### How to Use it
 ##### Example 1
 ```python
