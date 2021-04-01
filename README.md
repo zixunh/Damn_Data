@@ -32,14 +32,14 @@ import pandas as pd
 ```
 ```python
 http      = 'restapi.amap.com/v3/place/around?'
-key       = 'key=f9257dab1e8214b074587fe16484cb1e'
+key       = 'key= GET_YOUR_KEY_FROM_THIS_WEBSITE: https://lbs.amap.com/api/'
 para_loc  = '&location=120.233851,30.167682&radius=800'
 para_type = '&types=050000|070000|090000|120300|141200|160000|170100|170200'
 ```
 ```python
 URL=http+key+para_loc+para_type+'&output=json&offset=25&extensions=all&page='
 pois=amaPoi.getpois(URL)                                                    
-filePath = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalon/week200724/test.csv'
+filePath = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalonSharing/week200724/test.csv'
 amaPoi.write_to_csv(pois,filePath)                                        
 ```
 ```python
@@ -75,17 +75,6 @@ df
     </tr>
     <tr>
       <th>1</th>
-      <td>B0GRAZ3QZY</td>
-      <td>肯德基</td>
-      <td>120.228988</td>
-      <td>30.170157</td>
-      <td>萧山区</td>
-      <td>[]</td>
-      <td>[]</td>
-      <td>餐饮服务;快餐厅;快餐厅</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>B0FFJNT73W</td>
       <td>都会艺境售楼处</td>
       <td>120.229098</td>
@@ -96,7 +85,7 @@ df
       <td>生活服务;生活服务场所;生活服务场所</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>2</th>
       <td>B0GUM7859O</td>
       <td>朝天门火锅(杭州湘湖店)</td>
       <td>120.229051</td>
