@@ -4,8 +4,8 @@
 ---
 ### Damn GeoSpider
 ### Damn GeoBee
+  #### GeoKit
   #### HotGrid
-  * Geographic Coordinate Calculator
   #### GeoHash
 ### Examples
 * Data Set for Test
