@@ -13,7 +13,8 @@ python setup.py install
 - [x] GeoKit
 - [x] HotGrid
 - [ ] GeoHash
-### Examples
+### How to Use it
+* example 1
 ```python
 import pandas as pd
 chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
