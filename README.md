@@ -27,129 +27,26 @@ python setup.py install
 # How to Use it
 ### Example 1
 ```python
-import pandas as pd
-chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
-chengdu_poi.tail(1)
-```
-![26a8c13e33f7e264966a6f6b452f6be](https://user-images.githubusercontent.com/39406532/113276699-add45400-9312-11eb-82b2-5f9658afcdc0.png)
-```python
-from damndata.damn_geoBee.hotgrid import HotGridGenerator
-hg = HotGridGenerator(gridUnit = 200,searchRadius = 1000)
-hg.grid_setting(chengdu_poi,'wgslat','wgslng')
-chengdu_poi_hotMap=hg.gridCounting_basic(chengdu_poi,'wgslat','wgslng')
-```
-```python
-import seaborn as sns
-from IPython.core.pylabtools import figsize
-figsize(21,12)
-sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
-```
-![example1](https://user-images.githubusercontent.com/39406532/113274748-9bf1b180-9310-11eb-83f9-f551c0aa93df.png)
-
-### Example 2
-```python
-hg = HotGridGenerator(gridUnit = 1000,searchRadius = 1000)
-hg.grid_setting(chengdu_poi,'wgslat','wgslng')
-chengdu_typeMap = hg.gridCounting_byType(chengdu_poi,'wgslat','wgslng','typei')
-```
-```python
-import matplotlib.pyplot as plt
-%matplotlib inline
-fig,ax = plt.subplots(4,4, figsize=(21,12))
-c=0
-for i in range(4):
-    for j in range(4):
-        sns.heatmap(chengdu_typeMap[c].sort_index(axis=0,ascending=False),ax=ax[i,j])
-        ax[i,j].set_title('poi'+str(c).zfill(2))
-        c+=1
-plt.tight_layout()
-```
-![example2](https://user-images.githubusercontent.com/39406532/113274997-dd825c80-9310-11eb-95b6-3abc37ae069d.png)
-##### example
-
-### 载入环境
-
-
-```python
 import amaPoi
 import pandas as pd
 ```
-
-### 参数设置
-
-###### 说明**
-详细文档：         https://lbs.amap.com/api/webservice/guide/api/search 
-
-http接口：         'resapi.amap.com/v3/place/'
-
-检索模式：（地理参数 'geo'）
-
-关键字搜索：        'text?'     >>>  'city=' (citycode|adcode)
-
-周边搜索：         'around?'    >>>  'location='、'radius='
-
-多边形搜索：        'polygon?'   >>>  'polygon=' 
-
-参数：             key、'geo'、types|keywords
-
-
 ```python
 http      = 'restapi.amap.com/v3/place/around?'
 key       = 'key=f9257dab1e8214b074587fe16484cb1e'
 para_loc  = '&location=120.233851,30.167682&radius=800'
 para_type = '&types=050000|070000|090000|120300|141200|160000|170100|170200'
 ```
-
-### 爬取
-
-
 ```python
 URL=http+key+para_loc+para_type+'&output=json&offset=25&extensions=all&page='
-pois=amaPoi.getpois(URL)                                                           #请求数据
-
-filePath = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalon/week200724/test.csv'#设定文件路径
-amaPoi.write_to_csv(pois,filePath)                                                 #写入本地
-print('Done!!!')
+pois=amaPoi.getpois(URL)                                                    
+filePath = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalon/week200724/test.csv'
+amaPoi.write_to_csv(pois,filePath)                                        
 ```
-
-    Scraping...
-    
-    Scraping...
-    
-    Scraping...
-    
-    Scraping...
-    
-    Scraping...
-    
-    Done!!!
-    
-
-### 读入爬取结果
-
-
 ```python
 df=pd.read_csv(filePath,index_col='Unnamed: 0')
 df
 ```
-
-
-
-
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -252,6 +149,7 @@ df
 <p>100 rows × 8 columns</p>
 </div>
 
+### Example 2
 ```python
 type_list=['050000','060000','070000']
 ```
@@ -260,12 +158,50 @@ for i,typei in enumerate(type_list):
     print(i,typei)
     URL_i=http+key+para_loc+typei+'&output=json&offset=25&extensions=all&page='
     pois_i=amaPoi.getpois(URL_i)                                                           
-
     filePath_i = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalon/week200724/'+str(i).zfill(2)+'.csv'
     amaPoi.write_to_csv(pois_i,filePath_i)                                                 
     print('Done!!!')
 ```
+### Example 3
+```python
+import pandas as pd
+chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
+chengdu_poi.tail(1)
+```
+![26a8c13e33f7e264966a6f6b452f6be](https://user-images.githubusercontent.com/39406532/113276699-add45400-9312-11eb-82b2-5f9658afcdc0.png)
+```python
+from damndata.damn_geoBee.hotgrid import HotGridGenerator
+hg = HotGridGenerator(gridUnit = 200,searchRadius = 1000)
+hg.grid_setting(chengdu_poi,'wgslat','wgslng')
+chengdu_poi_hotMap=hg.gridCounting_basic(chengdu_poi,'wgslat','wgslng')
+```
+```python
+import seaborn as sns
+from IPython.core.pylabtools import figsize
+figsize(21,12)
+sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
+```
+![example1](https://user-images.githubusercontent.com/39406532/113274748-9bf1b180-9310-11eb-83f9-f551c0aa93df.png)
 
+### Example 4
+```python
+hg = HotGridGenerator(gridUnit = 1000,searchRadius = 1000)
+hg.grid_setting(chengdu_poi,'wgslat','wgslng')
+chengdu_typeMap = hg.gridCounting_byType(chengdu_poi,'wgslat','wgslng','typei')
+```
+```python
+import matplotlib.pyplot as plt
+%matplotlib inline
+fig,ax = plt.subplots(4,4, figsize=(21,12))
+c=0
+for i in range(4):
+    for j in range(4):
+        sns.heatmap(chengdu_typeMap[c].sort_index(axis=0,ascending=False),ax=ax[i,j])
+        ax[i,j].set_title('poi'+str(c).zfill(2))
+        c+=1
+plt.tight_layout()
+```
+![example2](https://user-images.githubusercontent.com/39406532/113274997-dd825c80-9310-11eb-95b6-3abc37ae069d.png)
 
 ---
 **Email:** huangzxarchitecture@zju.edu.cn
