@@ -157,7 +157,28 @@ import pandas as pd
 chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
 chengdu_poi.tail(1)
 ```
-![26a8c13e33f7e264966a6f6b452f6be](https://user-images.githubusercontent.com/39406532/113276699-add45400-9312-11eb-82b2-5f9658afcdc0.png)
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>wgslng</th>
+      <th>wgslat</th>
+      <th>typei</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>30883</th>
+      <td>B0FFKVGBUH</td>
+      <td>104.120454</td>
+      <td>30.722093</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 ```python
 from damndata.damn_geoBee.hotgrid import HotGridGenerator
 hg = HotGridGenerator(gridUnit = 200,searchRadius = 1000)
