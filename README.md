@@ -153,7 +153,7 @@ for i,typei in enumerate(type_list):
     print(i,typei)
     URL_i=http+key+para_loc+typei+'&output=json&offset=25&extensions=all&page='
     pois_i=amaPoi.getpois(URL_i)                                                           
-    filePath_i = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalon/week200724/'+str(i).zfill(2)+'.csv'
+    filePath_i = 'E:/zixunHUANG/2019-2021_Project/202007_FridaySalonSharing/week200724/'+str(i).zfill(2)+'.csv'
     amaPoi.write_to_csv(pois_i,filePath_i)                                                 
     print('Done!!!')
 ```
