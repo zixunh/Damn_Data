@@ -75,7 +75,7 @@ class HotGridGenerator():
 
     def gridCounting_byType(self,df0,lat_col,lng_col,type_col):
         counting_list = []
-        for typei in df0[type_col].unique():
+        for typei in np.sort(df0[type_col].unique()):
             df_typei=df0[df0[type_col]==typei]
 
             counting = self.gridCounting_basic(df_typei,lat_col,lng_col)
@@ -103,7 +103,7 @@ class HotGridGenerator():
 
     def gridCounting_ex(self,df0,lat_col,lng_col,weight_col,type_col):
         counting_list = []
-        for typei in df0[type_col].unique():
+        for typei in np.sort(df0[type_col].unique()):
             df_typei=df0[df0[type_col]==typei]
 
             counting = self.gridCounting_weight(df_typei,lat_col,lng_col,weight_col)
