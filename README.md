@@ -7,6 +7,7 @@ python setup.py install
 ---
 # Damn GeoSpider
 ### GeoAutoNavi
+- geoautonavi
 ### GeoSocialMedia
 # Damn GeoBee
 ### GeoKit
