@@ -1,3 +1,4 @@
+![download (1)](https://user-images.githubusercontent.com/39406532/113837086-13678b00-97c0-11eb-845f-865db15ad48f.png)
 # Brief Intro
 The third-party package (**damndata**) is currently divided into two parts, one part is used for obtaining urban big data such as points of interest, area of interest, social media data with geo-information, and the other part is used for extracting geographic distribution features to help designers visualize mass urban information.
 # Installation
@@ -244,7 +245,7 @@ poi_hotMap=hg.gridCounting_basic(csv_0,'wgslat','wgslng')
 figsize(22,24)
 sns.heatmap(poi_hotMap.sort_index(axis=0,ascending=False),cmap='Greys', cbar=False, xticklabels=False, yticklabels=False)
 ```
-![download](https://user-images.githubusercontent.com/39406532/113834920-f336cc80-97bd-11eb-8014-54551ebb47ce.png)
+![download (1)](https://user-images.githubusercontent.com/39406532/113837116-1b272f80-97c0-11eb-8af1-23a6566ccd4f.png)
 
 ---
 **Email:** huangzxarchitecture@zju.edu.cn
