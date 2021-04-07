@@ -214,7 +214,7 @@ for typei in types:
         geoautonavi.write_to_csv(pois,typei+'_'+str(i)+'.csv')
         print(typei+'_'+str(i),':',url) 
 ```
-### data processing
+##### data processing
 ```python
 import os
 poi_filelist = []
@@ -229,7 +229,7 @@ for i in range(1,len(poi_filelist)):
     csv_0 = pd.concat([csv_0,csv_i],axis=0)
     csv_0.reset_index(drop=True,inplace=True)
 ```
-### visualization
+##### visualization
 ```python
 from damndata.damn_geoBee.hotgrid import HotGridGenerator
 import seaborn as sns
