@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@File    :   hotgrid.py
+@Author  :   HUANG Zixun
+@Version :   1.0
+@Contact :   zixunhuang@outlook.com
+@License :   Copyright © 2007 Free Software Foundation, Inc
+@Desc    :   None
+'''
+
 import numpy as np
 import pandas as pd
 from .geokit import getlngandlat, haversine

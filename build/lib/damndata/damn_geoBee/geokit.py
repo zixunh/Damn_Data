@@ -1,4 +1,13 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@File    :   geokit.py
+@Author  :   HUANG Zixun
+@Version :   1.0
+@Contact :   zixunhuang@outlook.com
+@License :   Copyright © 2007 Free Software Foundation, Inc
+@Desc    :   None
+'''
 import math
 import numpy as np
 from math import tan,atan,radians,cos,sin,asin,sqrt,atan2

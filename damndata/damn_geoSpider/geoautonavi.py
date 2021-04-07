@@ -25,13 +25,15 @@ def hand(poilist, result):
     pois = result['pois']
     for i in range(len(pois)):
         poilist.append(pois[i])
-def getpois(poi_search_url):
+def getpois(poi_search_url,display=0):
     i = 1
     poilist = []
     while True:  
         result = getpoi_page(poi_search_url, i)
-        print('Scraping...\n')
-        result = json.loads(result) 
+        # print('Scraping...\n')
+        result = json.loads(result)
+        if display:
+            print(result)
         if result.get('count','not exist') == 'not exist':
             break
         if result.get('count','not exist') == '0':
