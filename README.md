@@ -200,5 +200,47 @@ plt.tight_layout()
 ```
 ![example2](https://user-images.githubusercontent.com/39406532/113274997-dd825c80-9310-11eb-95b6-3abc37ae069d.png)
 
+### Example 5
+##### info crawling
+```python
+from damndata.damn_geoSpider import geoautonavi, urlgrid
+import pandas as pd
+types = ['090100','090200','090300','090400','090500','090600','080100']
+geocoor = [121.393341,31.122791,121.608948,31.308944]#bottomleft, topright# shanghai
+url_collection = urlgrid.urlcreator_types(types,geocoor,grid=(0.03,0.03))
+for typei in types:
+    for i,url in enumerate(url_collection[typei]):
+        pois = geoautonavi.getpois(url)
+        geoautonavi.write_to_csv(pois,typei+'_'+str(i)+'.csv')
+        print(typei+'_'+str(i),':',url) 
+```
+### data processing
+```python
+import os
+poi_filelist = []
+for filename in os.listdir(os.getcwd()):
+    if filename.endswith('.csv'):
+        poi_filelist.append(filename)
+csv_0 = pd.read_csv(poi_filelist[0],index_col='Unnamed: 0')[['id','wgslng','wgslat']]
+csv_0['type']=poi_filelist[0].split('_')[0]
+for i in range(1,len(poi_filelist)):
+    csv_i = pd.read_csv(poi_filelist[i],index_col='Unnamed: 0')[['id','wgslng','wgslat']]
+    csv_i['type']=poi_filelist[i].split('_')[0]
+    csv_0 = pd.concat([csv_0,csv_i],axis=0)
+    csv_0.reset_index(drop=True,inplace=True)
+```
+### visualization
+```python
+from damndata.damn_geoBee.hotgrid import HotGridGenerator
+import seaborn as sns
+from IPython.core.pylabtools import figsize
+hg = HotGridGenerator(gridUnit = 200,searchRadius = 200)
+hg.grid_setting(csv_0,'wgslat','wgslng')
+poi_hotMap=hg.gridCounting_basic(csv_0,'wgslat','wgslng')
+figsize(22,24)
+sns.heatmap(poi_hotMap.sort_index(axis=0,ascending=False),cmap='Greys', cbar=False, xticklabels=False, yticklabels=False)
+```
+![download](https://user-images.githubusercontent.com/39406532/113834920-f336cc80-97bd-11eb-8014-54551ebb47ce.png)
+
 ---
 **Email:** huangzxarchitecture@zju.edu.cn
