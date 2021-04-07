@@ -27,6 +27,7 @@ python setup.py install
 ### GeoHash
 # How to Use it
 ### Example 1
+##### your first data crawling program
 ```python
 from damndata.damn_geoSpider import geoautonavi as amaPoi
 import pandas as pd
@@ -146,6 +147,7 @@ df
 </div>
 
 ### Example 2
+##### data crawling according to urban function type
 ```python
 type_list=['050000','060000','070000']
 ```
@@ -159,6 +161,7 @@ for i,typei in enumerate(type_list):
     print('Done!!!')
 ```
 ### Example 3
+##### urban function density map
 ```python
 import pandas as pd
 chengdu_poi = pd.read_csv('chengdu_poi.csv').drop(columns='Unnamed: 0')
@@ -181,6 +184,7 @@ sns.heatmap(chengdu_poi_hotMap.sort_index(axis=0,ascending=False))
 ![example1](https://user-images.githubusercontent.com/39406532/113274748-9bf1b180-9310-11eb-83f9-f551c0aa93df.png)
 
 ### Example 4
+##### urban function diversity map
 ```python
 hg = HotGridGenerator(gridUnit = 1000,searchRadius = 1000)
 hg.grid_setting(chengdu_poi,'wgslat','wgslng')
