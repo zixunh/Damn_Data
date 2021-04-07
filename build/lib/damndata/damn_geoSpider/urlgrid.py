@@ -9,7 +9,7 @@ def text_save(filename,data):
     file.close()
     # print('saved')
 
-def urlcreator(typei,geocoor,export=False):
+def urlcreator(typei,geocoor,grid=(0.05,0.05),export=False):
     poi_url='restapi.amap.com/v3/place/'
     #zuoxia
     startlng=geocoor[0]
@@ -19,8 +19,8 @@ def urlcreator(typei,geocoor,export=False):
     endlat=geocoor[3]
     dlng = -startlng+endlng
     dlat = -startlat+endlat
-    Nlng = int(dlng/0.05)+1
-    Nlat = int(dlat/0.05)+1
+    Nlng = int(dlng/grid[0])+1
+    Nlat = int(dlat/grid[1])+1
     keyL = key_pool()
 
     urlL = []
@@ -31,10 +31,10 @@ def urlcreator(typei,geocoor,export=False):
             keyi=keyL[c]
             c+=1
 
-            slngi=format(startlng+0.04*i,'.6f')
-            elngi=format(startlng+0.04*(i+1),'.6f')
-            slatj=format(startlat+0.05*j,'.6f')
-            elatj=format(startlat+0.05*(j+1),'.6f')
+            slngi=format(startlng+grid[0]*i,'.6f')
+            elngi=format(startlng+grid[0]*(i+1),'.6f')
+            slatj=format(startlat+grid[1]*j,'.6f')
+            elatj=format(startlat+grid[1]*(j+1),'.6f')
             rec=str(slngi)+','+str(slatj)+'|'+str(elngi)+','+str(elatj)
             # print(rec)
             # keyi
@@ -48,11 +48,11 @@ def urlcreator(typei,geocoor,export=False):
         text_save('urlList'+typei+'.txt',urlL)
     return urlL
 
-def urlcreator_types(types,geocoor,export=False):
+def urlcreator_types(types,geocoor,grid=(0.05,0.05),export=False):
     urlD = {}
     for typei in types:
         # print(typei)
-        urlD[typei] = urlcreator(typei, geocoor,export)
+        urlD[typei] = urlcreator(typei,geocoor,grid,export)
     return urlD
 
 

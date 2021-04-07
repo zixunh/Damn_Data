@@ -12,4 +12,4 @@ damndata/damn_geoSpider/GCJ02_to_WGS84.py
 damndata/damn_geoSpider/__init__.py
 damndata/damn_geoSpider/geoautonavi.py
 damndata/damn_geoSpider/key_pool.py
-damndata/damn_geoSpider/url_grid.py
+damndata/damn_geoSpider/urlgrid.py
