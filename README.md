@@ -1,6 +1,6 @@
 ![download (2)](https://user-images.githubusercontent.com/39406532/113837598-97217780-97c0-11eb-83bf-57d6d67b7f04.png)
 # Brief Intro
-The third-party package (**damndata**) is currently divided into two parts, one part is used for obtaining urban big data such as points of interest, area of interest, social media data with geo-information, and the other part is used for extracting geographic distribution features to help designers visualize mass urban information.
+**damndata** is currently divided into two parts. One part is used for obtaining urban big data such as points of interest, area of interest, social media data with geo-information. And the other part is used for extracting geographic distribution features to help designers visualize mass urban information.
 # Installation
 ```python
 python setup.py install
